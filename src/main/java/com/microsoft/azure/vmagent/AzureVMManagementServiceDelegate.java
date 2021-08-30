@@ -565,6 +565,8 @@ public final class AzureVMManagementServiceDelegate {
                 addPublicIPResourceNode(tmp, cloud);
             }
 
+            putVariable(tmp, "acceleratedNetworking", Boolean.toString((Boolean) properties.get("enableAcceleratedNetworking")));
+
             if (StringUtils.isNotBlank((String) properties.get("nsgName"))) {
                 addNSGNode(tmp, (String) properties.get("nsgName"));
             }
@@ -1075,6 +1077,7 @@ public final class AzureVMManagementServiceDelegate {
                     (Boolean) properties.get("enableMSI"),
                     (Boolean) properties.get("enableUAMI"),
                     (Boolean) properties.get("ephemeralOSDisk"),
+                    (Boolean) properties.get("enableAcceleratedNetworking"),
                     (String) properties.get("uamiID"),
                     template,
                     fqdn,

@@ -38,6 +38,7 @@
             },
             "dependsOn": [],
             "properties": {
+                "enableAcceleratedNetworking": "[variables('acceleratedNetworking')]",
                 "ipConfigurations": [
                     {
                         "name": "ipconfig1",

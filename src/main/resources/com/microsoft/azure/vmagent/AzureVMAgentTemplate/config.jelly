@@ -235,6 +235,10 @@
                         <f:checkbox default="false"/>
                     </f:entry>
 
+                    <f:entry title="${%Enable_Accelerated_Networking}" field="enableAcceleratedNetworking">
+                        <f:checkbox/>
+                    </f:entry>
+
                     <f:entry title="${%NSG_Name}" field="nsgName" help="/plugin/azure-vm-agents/help-nsgName.html">
                         <f:textbox/>
                     </f:entry>

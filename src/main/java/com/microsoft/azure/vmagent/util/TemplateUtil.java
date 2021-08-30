@@ -50,6 +50,7 @@ public final class TemplateUtil {
                 && StringUtils.equals(a.getVirtualNetworkResourceGroupName(), b.getVirtualNetworkResourceGroupName())
                 && StringUtils.equals(a.getSubnetName(), b.getSubnetName())
                 && a.getUsePrivateIP() == b.getUsePrivateIP()
+                && a.isEnableAcceleratedNetworking() == b.isEnableAcceleratedNetworking()
                 && StringUtils.equals(a.getNsgName(), b.getNsgName())
                 && StringUtils.equals(a.getJvmOptions(), b.getJvmOptions())
                 && a.getNoOfParallelJobs() == b.getNoOfParallelJobs()

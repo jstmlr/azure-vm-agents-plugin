@@ -19,6 +19,7 @@ jenkins:
             credentialsId: "admin-cred"
             diskType: "managed"
             doNotUseMachineIfInitFails: true
+            enableAcceleratedNetworking: false
             enableMSI: false
             enableUAMI: false
             ephemeralOSDisk: false

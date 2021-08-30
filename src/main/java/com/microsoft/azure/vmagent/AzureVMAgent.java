@@ -126,6 +126,8 @@ public class AzureVMAgent extends AbstractCloudSlave implements TrackedItem {
 
     private final boolean ephemeralOSDisk;
 
+    private final boolean enableAcceleratedNetworking;
+
     private final String uamiID;
 
     private String javaPath;
@@ -171,6 +173,7 @@ public class AzureVMAgent extends AbstractCloudSlave implements TrackedItem {
             boolean enableMSI,
             boolean enableUAMI,
             boolean ephemeralOSDisk,
+            boolean enableAcceleratedNetworking,
             String uamiID,
             String javaPath,
             AzureVMAgentTemplate template) throws FormException, IOException {
@@ -206,6 +209,7 @@ public class AzureVMAgent extends AbstractCloudSlave implements TrackedItem {
         this.enableMSI = enableMSI;
         this.enableUAMI = enableUAMI;
         this.ephemeralOSDisk = ephemeralOSDisk;
+        this.enableAcceleratedNetworking = enableAcceleratedNetworking;
         this.uamiID = uamiID;
         this.template = template;
         this.creationTime = System.currentTimeMillis();
@@ -242,6 +246,7 @@ public class AzureVMAgent extends AbstractCloudSlave implements TrackedItem {
             boolean enableMSI,
             boolean enableUAMI,
             boolean ephemeralOSDisk,
+            boolean enableAcceleratedNetworking,
             String uamiID,
             AzureVMAgentTemplate template,
             String fqdn,
@@ -283,6 +288,7 @@ public class AzureVMAgent extends AbstractCloudSlave implements TrackedItem {
                 enableMSI,
                 enableUAMI,
                 ephemeralOSDisk,
+                enableAcceleratedNetworking,
                 uamiID,
                 javaPath,
                 template
@@ -436,6 +442,10 @@ public class AzureVMAgent extends AbstractCloudSlave implements TrackedItem {
 
     public void setPrivateIP(String privateIP) {
         this.privateIP = privateIP;
+    }
+
+    public boolean isEnableAcceleratedNetworking() {
+        return enableAcceleratedNetworking;
     }
 
     public int getRetentionTimeInMin() {

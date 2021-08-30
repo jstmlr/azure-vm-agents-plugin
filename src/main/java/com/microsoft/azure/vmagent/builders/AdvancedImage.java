@@ -55,6 +55,8 @@ public class AdvancedImage {
 
     private boolean usePrivateIP;
 
+    private boolean enableAcceleratedNetworking;
+
     private String nsgName;
 
     private String jvmOptions;
@@ -89,6 +91,7 @@ public class AdvancedImage {
                          String virtualNetworkResourceGroupName,
                          String subnetName,
                          boolean usePrivateIP,
+                         boolean enableAcceleratedNetworking,
                          String nsgName,
                          String jvmOptions,
                          String noOfParallelJobs,
@@ -119,6 +122,7 @@ public class AdvancedImage {
         this.virtualNetworkResourceGroupName = virtualNetworkResourceGroupName;
         this.subnetName = subnetName;
         this.usePrivateIP = usePrivateIP;
+        this.enableAcceleratedNetworking = enableAcceleratedNetworking;
         this.nsgName = nsgName;
         this.jvmOptions = jvmOptions;
         this.noOfParallelJobs = noOfParallelJobs;
@@ -227,6 +231,10 @@ public class AdvancedImage {
 
     public boolean isUsePrivateIP() {
         return usePrivateIP;
+    }
+
+    public boolean isEnableAcceleratedNetworking() {
+        return enableAcceleratedNetworking;
     }
 
     public String getNsgName() {

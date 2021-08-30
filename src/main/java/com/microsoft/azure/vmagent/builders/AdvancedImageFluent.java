@@ -58,6 +58,8 @@ public class AdvancedImageFluent<T extends AdvancedImageFluent<T>> {
 
     private boolean usePrivateIP;
 
+    private boolean enableAcceleratedNetworking;
+
     private String nsgName;
 
     private String jvmOptions;
@@ -78,6 +80,7 @@ public class AdvancedImageFluent<T extends AdvancedImageFluent<T>> {
         this.enableUAMI = false;
         this.uamiID = "";
         this.usePrivateIP = false;
+        this.enableAcceleratedNetworking = false;
         this.noOfParallelJobs = "1";
         this.templateDisabled = false;
     }
@@ -188,6 +191,11 @@ public class AdvancedImageFluent<T extends AdvancedImageFluent<T>> {
 
     public T withUsePrivateIP(boolean usePrivateIP) {
         this.usePrivateIP = usePrivateIP;
+        return (T) this;
+    }
+
+    public T withEnableAcceleratedNetworking(boolean enableAcceleratedNetworking) {
+        this.enableAcceleratedNetworking = enableAcceleratedNetworking;
         return (T) this;
     }
 
@@ -313,6 +321,10 @@ public class AdvancedImageFluent<T extends AdvancedImageFluent<T>> {
 
     public boolean isUsePrivateIP() {
         return usePrivateIP;
+    }
+
+    public boolean isEnableAcceleratedNetworking() {
+        return enableAcceleratedNetworking;
     }
 
     public String getNsgName() {

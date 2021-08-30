@@ -399,6 +399,7 @@ public class IntegrationTest {
         when(templateMock.getVMCredentials()).thenReturn(vmCredentials);
         when(templateMock.retrieveAzureCloudReference()).thenReturn(cloudMock);
         when(templateMock.getUsePrivateIP()).thenReturn(!usePrivateIP);
+        when(templateMock.isEnableAcceleratedNetworking()).thenReturn(false);
         when(templateMock.getNsgName()).thenReturn(nsgName);
         when(templateMock.getStorageAccountType()).thenReturn(storageType);
         when(templateMock.getOsDiskStorageAccountType()).thenReturn(storageType);

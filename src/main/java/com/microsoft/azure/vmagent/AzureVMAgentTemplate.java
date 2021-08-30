@@ -308,6 +308,8 @@ public class AzureVMAgentTemplate implements Describable<AzureVMAgentTemplate>, 
 
     private boolean usePrivateIP;
 
+    private final boolean enableAcceleratedNetworking;
+
     private boolean spotInstance;
 
     private final String nsgName;
@@ -343,7 +345,6 @@ public class AzureVMAgentTemplate implements Describable<AzureVMAgentTemplate>, 
     private RetentionStrategy retentionStrategy;
 
     private int maximumDeploymentSize;
-
 
     // deprecated fields
     private transient boolean isInstallDocker;
@@ -398,6 +399,7 @@ public class AzureVMAgentTemplate implements Describable<AzureVMAgentTemplate>, 
             String virtualNetworkResourceGroupName,
             String subnetName,
             boolean usePrivateIP,
+            boolean enableAcceleratedNetworking,
             String nsgName,
             String agentWorkspace,
             String jvmOptions,
@@ -456,6 +458,7 @@ public class AzureVMAgentTemplate implements Describable<AzureVMAgentTemplate>, 
         this.virtualNetworkResourceGroupName = virtualNetworkResourceGroupName;
         this.subnetName = subnetName;
         this.usePrivateIP = usePrivateIP;
+        this.enableAcceleratedNetworking = enableAcceleratedNetworking;
         this.nsgName = nsgName;
         this.agentWorkspace = agentWorkspace;
         this.jvmOptions = jvmOptions;
@@ -647,6 +650,8 @@ public class AzureVMAgentTemplate implements Describable<AzureVMAgentTemplate>, 
                 isBasic ? "" : template.getSubnetName());
         templateProperties.put("usePrivateIP",
                 isBasic ? false : template.getUsePrivateIP());
+        templateProperties.put("enableAcceleratedNetworking",
+                isBasic ? false : template.isEnableAcceleratedNetworking());
         templateProperties.put("nsgName",
                 isBasic ? "" : template.getNsgName());
         templateProperties.put("jvmOptions",
@@ -1018,6 +1023,10 @@ public class AzureVMAgentTemplate implements Describable<AzureVMAgentTemplate>, 
 
     public boolean getUsePrivateIP() {
         return usePrivateIP;
+    }
+
+    public boolean isEnableAcceleratedNetworking() {
+        return enableAcceleratedNetworking;
     }
 
     public String getNsgName() {

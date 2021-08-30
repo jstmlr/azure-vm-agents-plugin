@@ -33,6 +33,7 @@ public class AdvancedImageBuilder extends AdvancedImageFluent<AdvancedImageBuild
         fluent.withVirtualNetworkResourceGroupName(image.getVirtualNetworkResourceGroupName());
         fluent.withSubnetName(image.getSubnetName());
         fluent.withUsePrivateIP(image.isUsePrivateIP());
+        fluent.withEnableAcceleratedNetworking(image.isEnableAcceleratedNetworking());
         fluent.withNetworkSecurityGroupName(image.getNsgName());
         fluent.withJvmOptions(image.getJvmOptions());
         fluent.withDisableTemplate(image.isTemplateDisabled());
@@ -67,6 +68,7 @@ public class AdvancedImageBuilder extends AdvancedImageFluent<AdvancedImageBuild
         fluent.withVirtualNetworkResourceGroupName(image.getVirtualNetworkResourceGroupName());
         fluent.withSubnetName(image.getSubnetName());
         fluent.withUsePrivateIP(image.isUsePrivateIP());
+        fluent.withEnableAcceleratedNetworking(image.isEnableAcceleratedNetworking());
         fluent.withNetworkSecurityGroupName(image.getNsgName());
         fluent.withJvmOptions(image.getJvmOptions());
         fluent.withDisableTemplate(image.isTemplateDisabled());
@@ -101,6 +103,7 @@ public class AdvancedImageBuilder extends AdvancedImageFluent<AdvancedImageBuild
                 fluent.getVirtualNetworkResourceGroupName(),
                 fluent.getSubnetName(),
                 fluent.isUsePrivateIP(),
+                fluent.isEnableAcceleratedNetworking(),
                 fluent.getNsgName(),
                 fluent.getJvmOptions(),
                 fluent.getNoOfParallelJobs(),
